@@ -8,10 +8,10 @@ function App() {
  
   // Crear listado de productos
   const [ productos, guardarProductos ] = useState([
-    { id: 1, nombre: 'Camisa Mongo', precio: 30 },
-    { id: 2, nombre: 'Camisa Express', precio: 20 },
-    { id: 3, nombre: 'Camisa React', precio: 60 },
-    { id: 4, nombre: 'Camisa NodeJs', precio: 50 },
+    { id: 1, nombre: 'Camisa Mongo', precio: 30, img: 'assets/img/Mongo.jpg' },
+    { id: 2, nombre: 'Camisa Express', precio: 20, img: 'assets/img/express.png' },
+    { id: 3, nombre: 'Camisa React', precio: 60, img: 'assets/img/React.jpg' },
+    { id: 4, nombre: 'Camisa NodeJs', precio: 50, img: 'assets/img/nodeJs.jpeg' },
   ]);
 
   // State para un carrito de compras
@@ -22,7 +22,7 @@ function App() {
   return (
     <div>
       <Header titulo="Tienda virtual" />
-        <h1>Lista de productos</h1>
+        <h1 className="mb-4">Lista de productos</h1>
         { productos.map( producto => 
           <Producto 
             key={producto.id}
@@ -34,7 +34,7 @@ function App() {
         )}
 
         <Carrito
-          guardarProductos={guardarProductos}          
+          carrito={carrito}          
         />
       <Footer year={year} />
     </div>
